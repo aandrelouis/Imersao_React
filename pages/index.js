@@ -1,18 +1,21 @@
+import React, {useState} from 'react';
 import config from '../config.json'
-
 import styled from 'styled-components'
 import { CSSReset } from '../src/Components/CSSReset'
-import Menu from '../src/Components/Menu.js'
+import Menu from '../src/Components/Menu'
 import { StyledTimeline } from '../src/Components/Timeline'
 
 export default function HomePage() {
+  const [valorDoFiltro, setValorDoFiltro] = useState("");
+  
   return (
     <>
       <CSSReset />
       <div>
-        <Menu />
+        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
+        {/* Prop Drilling - vai descendo na arvore de componentes 1 a 1 */}
         <Header />
-        <TimeLine playlists={config.playlists} />
+        <TimeLine searchValue={valorDoFiltro} playlists={config.playlists} />
       </div>
     </>
   )
@@ -29,18 +32,27 @@ const StyleHeader = styled.div`
   }
 
   .user-info {
-    margin-top: 50px;
     display: flex;
     align-items: center;
     width: 100%;
     padding: 16px 32px;
-    
   }
 `
+
+
+const SyledBanner = styled.div`
+  height: 230px;
+  background-image:url(${({ bg}) => bg});
+  // background-image: url(${config.bg});
+  background-size: cover;
+  `;
+
+
 
 function Header() {
   return (
     <StyleHeader>
+      <SyledBanner bg={config.bg} />
       {/* <img src="banner" /> */}
 
       <div className='user-info'>
@@ -61,9 +73,7 @@ function Header() {
 }
 
 
-function TimeLine(props) {
-  console.log("dentro do componente", props)
-
+function TimeLine({searchValue, ...props}) {
   const playlistsNames = Object.keys(props.playlists)
   //Vai pegar as chaves do objeto e transformar em um array
 
@@ -73,12 +83,16 @@ function TimeLine(props) {
       {playlistsNames.map((playlistName) => {
         const videos = props.playlists[playlistName]
         return (
-              <section>
+              <section key={playlistName}>
                 <h2>{playlistName}</h2>
                 <div>
-                 {videos.map((video) => {
+                 {videos.filter((video) => {
+                  const titleNormalized = video.title.toLowerCase();
+                  const serchValueNormalized = searchValue.toLowerCase();
+                  return titleNormalized.includes(serchValueNormalized)
+                 }).map((video) => {
                   return (
-                    <a href={video.url}>
+                    <a key={video.url} href={video.url}>
                       <img src={video.thumb} />
                       <span>
                         {video.title}
@@ -93,7 +107,12 @@ function TimeLine(props) {
   )
 }
 
-// Primeiro dia - desafios
-// Adicionar um banner -- utilizar o unsplash
-// Criar os aluraTubes Favoritos -- criar os favorites no config.json
-//Elaborar um readme mais bonito  para apresentar o projeot
+// Single Page Application
+// SPA - React, Angular, Vue
+// Uma aplicação que só tem uma página, os elementos se adaptam a tela dinamicamente
+// A SPA não recarrega a página, ela só atualiza o conteúdo
+
+// Desafios Aula 2
+// Implementar um dark mode
+// Investigar o useState
+// fazer mais teste com os styled components e arrow functions
