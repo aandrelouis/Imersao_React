@@ -10,6 +10,23 @@ export const StyledTimeline = styled.div`
     margin-bottom: 16px;
     text-transform: capitalize;
   }
+
+  .areaFavoritos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .avatar {
+    width: 100px;
+  }
+
+
   img {
     aspect-ratio: 16/9;
     font-weight: 500;

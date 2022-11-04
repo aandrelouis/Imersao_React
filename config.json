@@ -1,7 +1,11 @@
 {
-    "name": "Mario Souto (DevSoutinho)",
-    "job": "Lead Software Engineer",
-    "github": "omariosouto",
+    "name": "Andre Louis (Dev)",
+    "job": "Scuba Team",
+    "github": "aandrelouis",
+    "favoritos": [
+      {"nome": "Paulo Silveira", "foto": "https://github.com/peas.png"},
+      {"nome": "Mario Souto", "foto": "https://github.com/omariosouto.png"}
+    ],
     "playlists": {
       "jogos": [
         {

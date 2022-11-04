@@ -12,7 +12,7 @@ export default function HomePage() {
       <div>
         <Menu />
         <Header />
-        <TimeLine playlists={config.playlists} />
+        <TimeLine playlists={config.playlists} favoritos={config.favoritos} />
       </div>
     </>
   )
@@ -37,11 +37,18 @@ const StyleHeader = styled.div`
     
   }
 `
+const SyledBanner = styled.div`
+  height: 230px;
+  background-image: url("https://images.unsplash.com/photo-1540655037529-dec987208707?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=921&q=80");
+  background-size: cover;
+  `;
+
+
 
 function Header() {
   return (
     <StyleHeader>
-      {/* <img src="banner" /> */}
+      <SyledBanner />
 
       <div className='user-info'>
         <img src={`https://github.com/${config.github}.png`} />
@@ -88,6 +95,18 @@ function TimeLine(props) {
               </section>
             )
           })}
+      <div className='areaFavoritos'>
+        {props.favoritos.map((pessoa) => {
+          return (
+                <div className='avatar'>
+                  <img src={pessoa.foto} />
+                  <p>
+                    {pessoa.nome}
+                  </p>
+              </div>
+          )})}
+      </div>
+      
       {/* Vai ser map o tempo todo */}
     </StyledTimeline>
   )
