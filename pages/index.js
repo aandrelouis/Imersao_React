@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import config from '../config.json'
 import styled from 'styled-components'
-import { CSSReset } from '../src/Components/CSSReset'
 import Menu from '../src/Components/Menu'
 import { StyledTimeline } from '../src/Components/Timeline'
 
@@ -10,7 +9,6 @@ export default function HomePage() {
   
   return (
     <>
-      <CSSReset />
       <div>
         <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
         {/* Prop Drilling - vai descendo na arvore de componentes 1 a 1 */}
@@ -25,6 +23,8 @@ export default function HomePage() {
 
 
 const StyleHeader = styled.div`
+  background-color: ${({ theme}) => theme.backgroundLevel1} ;
+  
   img {
     width: 80px;
     height: 80px;
@@ -112,7 +112,7 @@ function TimeLine({searchValue, ...props}) {
 // Uma aplicação que só tem uma página, os elementos se adaptam a tela dinamicamente
 // A SPA não recarrega a página, ela só atualiza o conteúdo
 
-// Desafios Aula 2
-// Implementar um dark mode
-// Investigar o useState
-// fazer mais teste com os styled components e arrow functions
+// Desafios Aula 3
+// 1 - Criar a página video.js quando clicar no video com o titulo e o video
+// 2 - Adicionar o projeto na vitrine do Alura
+// 3 - copiar pagina do youtube
