@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Search from './Components/Search'
+import Search from './components/Search'
 
 const StyledMenu = styled.header`
   display: flex;
   flex-direction: row;
   height: 56px;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.backgroundLevel1 || "#FFFFFF"};
-  border: 1px solid ${({ theme }) => theme.borderBase || "#e5e5e5"};
+  background-color: ${({ theme }) => theme.backgroundLevel1 || "#202020"};
+  border: 1px solid ${({ theme }) => theme.borderBase || "#181818"};
   align-items: center;
   padding: 0 16px;
   gap: 16px;
@@ -20,7 +20,7 @@ const StyledMenu = styled.header`
       max-width: 127px;
     }
     .text {
-      fill: ${({ theme }) => theme.textColorBase || "#222222"};
+      fill: ${({ theme }) => theme.textColorBase || "#FFFFFF"};
     }
   }
 `;

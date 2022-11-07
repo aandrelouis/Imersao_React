@@ -5,6 +5,17 @@ import { CSSReset } from '../src/Components/CSSReset'
 import Menu from '../src/Components/Menu'
 import { StyledTimeline } from '../src/Components/Timeline'
 
+
+const darkMode = {
+  dark: {
+    backgroundBase: '#181818', 
+    backgroundLevel1: "#202020",
+    backgroundLevel2: "#313131",
+    borderBase: "#383838", 
+    textColorBase: "#FFFFFF",
+}
+}
+
 export default function HomePage() {
   const [valorDoFiltro, setValorDoFiltro] = useState("");
   
@@ -25,6 +36,9 @@ export default function HomePage() {
 
 
 const StyleHeader = styled.div`
+  background-color: #181818;
+  color: white;
+  
   img {
     width: 80px;
     height: 80px;
@@ -36,6 +50,11 @@ const StyleHeader = styled.div`
     align-items: center;
     width: 100%;
     padding: 16px 32px;
+    background-color:"#181818" ;
+  }
+
+  .user-info div {
+    background-color:"#181818" ;
   }
 `
 
@@ -114,5 +133,5 @@ function TimeLine({searchValue, ...props}) {
 
 // Desafios Aula 2
 // Implementar um dark mode
-// Investigar o useState
+// Investigar o useState -- https://pt-br.reactjs.org/docs/hooks-state.html
 // fazer mais teste com os styled components e arrow functions
