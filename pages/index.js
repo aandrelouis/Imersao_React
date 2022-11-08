@@ -3,6 +3,7 @@ import config from '../config.json'
 import styled from 'styled-components'
 import Menu from '../src/Components/Menu'
 import { StyledTimeline } from '../src/Components/Timeline'
+import Link from 'next/link';
 
 export default function HomePage() {
   const [valorDoFiltro, setValorDoFiltro] = useState("");
@@ -92,12 +93,14 @@ function TimeLine({searchValue, ...props}) {
                   return titleNormalized.includes(serchValueNormalized)
                  }).map((video) => {
                   return (
-                    <a key={video.url} href={video.url}>
+                    <Link key={video.url} 
+                      href={`/video?url=${video.url}`}
+                    >
                       <img src={video.thumb} />
                       <span>
                         {video.title}
                       </span>
-                    </a>)})}
+                    </Link>)})}
                 </div>
               </section>
             )
