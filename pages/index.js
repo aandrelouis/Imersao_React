@@ -115,8 +115,5 @@ function TimeLine({searchValue, ...props}) {
 // Uma aplicação que só tem uma página, os elementos se adaptam a tela dinamicamente
 // A SPA não recarrega a página, ela só atualiza o conteúdo
 
-// Desafios Aula 4
-// 1 - gerar o thumbail do video quando adicionar o mesmo
-// 2 - carregar a imagem da thumb no formulario de adicionar
-// 3 - adicionar validação no formulario de adicionar
-// 4 - pesquisar o formik e entender seu funcionamento
+//Ajax - Asynchronous Javascript And XML
+// É uma requisição assincrona, que não recarrega a página
