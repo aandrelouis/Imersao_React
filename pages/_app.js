@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components'
 import { CSSReset } from '../src/Components/CSSReset'
 import ColorModeProvider, { ColorModeContext } from '../src/Components/Menu/components/ColorMode';
+import RegisterVideo from '../src/Components/RegisterVideo';
 import '../styles/globals.css'
 
 
@@ -43,6 +44,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme[contexto.mode]}>
           <CSSReset />
           <Component {...pageProps} />
+          <RegisterVideo />
       </ThemeProvider>
     // Melhor ter mais de um provider com tarefas específicas
     // do que ter um único provider com muitas responsabilidades

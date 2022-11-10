@@ -115,7 +115,8 @@ function TimeLine({searchValue, ...props}) {
 // Uma aplicação que só tem uma página, os elementos se adaptam a tela dinamicamente
 // A SPA não recarrega a página, ela só atualiza o conteúdo
 
-// Desafios Aula 3
-// 1 - Criar a página video.js quando clicar no video com o titulo e o video
-// 2 - Adicionar o projeto na vitrine do Alura
-// 3 - copiar pagina do youtube
+// Desafios Aula 4
+// 1 - gerar o thumbail do video quando adicionar o mesmo
+// 2 - carregar a imagem da thumb no formulario de adicionar
+// 3 - adicionar validação no formulario de adicionar
+// 4 - pesquisar o formik e entender seu funcionamento
