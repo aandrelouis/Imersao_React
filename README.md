@@ -1,34 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⚛️ Imersão React Alura
 
-## Getting Started
+O projeto foi desenvolvido durante a imersão React em que é feita uma aplicação em React, cujo o objetivo da aplicação é listar os principais vídeos do usuário em uma mesma plataforma. 
 
-First, run the development server:
+
+<h1 align="center">
+    <img alt="Demonstracao" title="Demonstracao" src="https://github.com/aandrelouis/Imersao_React/blob/main/src/assets/Aluratube.gif" width="800px" />
+</h1>
+
+<h4 align="center"> 
+	Aluratube
+</h4>
+
+## :information_source: O que é o Aluratube?
+
+Aluratube é uma aplicação desenvolvida em NextJs, cujo objetivo é centralizar todos os vídeos preferidos de uma pessoa na mesma plataforma, ainda é  possível dividir os vídeos em áreas de interesse, por exemplo: jogos, Front-end e Back-end.  A aplicação possui filtro de busca, integração com banco de dados e a opção de dark mode.
+
+
+## 🧑‍💻 Tecnologias
+
+Esse projeto foi desenvolvido com a utilização das seguintes tecnologias:
+- React
+- `NextJS` - framework de desevolvimento para aplicações frontend
+- `Componentes customizados`: criação e utilização de componentes customizados
+- `Hooks`: Uso de Hooks para organização dos estados dentro do componente
+- `Figma`: Para acompanhamento do Mockup
+- `Herança`: Uso de herança de pais para filhos 
+- `Arrow function`: Uso de arrow functions para criação das funções
+- `Condicionais`: Uso de operadores condicionais para verificação de determinadas ações
+- `State`: Uso de estados para o funcionamento e atualização da aplicação
+- `Supabase`: Para integração das funções de banco de dados
+- `theme`: Opção de mudança da cor do tema da aplicação
+- `Context API`: Para utilizar a passagem de parâmetros para componentes em diferentes camadas da aplicação
+- `Context API`: Passagem de parâmetros entre componentes que estão um abaixo do outro na árvore de componentes 
+
+
+
+## 🛠️ Abrir e rodar o projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clonar esse repositório
+$ git clone https://github.com/aandrelouis/Imersao_React
+# Vá para o ropositório
+$ cd Imersao_React
+# Agora que já tem a pasta do projeto na sua máquina, dentro dela instale as dependências:
+$ npm install
+# Então rodar o projeto:
+$ npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
