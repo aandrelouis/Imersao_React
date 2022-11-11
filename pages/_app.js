@@ -1,8 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components'
-import { CSSReset } from '../src/Components/CSSReset'
-import ColorModeProvider, { ColorModeContext } from '../src/Components/Menu/components/ColorMode';
-import RegisterVideo from '../src/Components/RegisterVideo';
+import { CSSReset } from '../src/components/CSSReset'
+import ColorModeProvider, { ColorModeContext } from '../src/components/Menu/components/ColorMode';
+import RegisterVideo from '../src/components/RegisterVideo';
 import '../styles/globals.css'
 
 
