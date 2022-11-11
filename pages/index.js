@@ -1,13 +1,38 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import config from '../config.json'
 import styled from 'styled-components'
 import Menu from '../src/Components/Menu'
 import { StyledTimeline } from '../src/Components/Timeline'
 import Link from 'next/link';
 
+import { videoService } from '../src/Components/services/videoService';
+
+
+
+
+
 export default function HomePage() {
   const [valorDoFiltro, setValorDoFiltro] = useState("");
-  
+  const [playlists, setPlaylists] = useState({});
+  const service = videoService();
+
+  useEffect(()=> {
+    service.getAllVideos()
+      .then((res) => {
+        console.log(res.data)
+        const novasPlaylists  = {...playlists}
+        res.data.map((video) => {
+          if(!novasPlaylists[video.playlist]) {
+            novasPlaylists[video.playlist] = []
+          }
+          novasPlaylists[video.playlist]?.push(video);
+        })
+        setPlaylists(novasPlaylists);
+      })
+    
+  },[])
+
+
   return (
     <>
       <div>
@@ -117,3 +142,9 @@ function TimeLine({searchValue, ...props}) {
 
 //Ajax - Asynchronous Javascript And XML
 // É uma requisição assincrona, que não recarrega a página
+
+// Desafios Aula 5
+// Migrar os dados do config.json para o supabase
+// explorar o supabase -- estudar o on que faz o real time
+// Utilizar outro banco de dados (MongoDB, Firebase, etc)
+// Se registrar no 7 days of code

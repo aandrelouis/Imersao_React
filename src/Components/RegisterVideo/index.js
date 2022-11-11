@@ -41,7 +41,7 @@ export default function RegisterVideo(){
    const formCadastro = useForm({
         initialValues: {
             title: 'Frost',
-            url: 'https://www.youtube.com/watch?v=Q8t9tU2TgkI',
+            url: 'https://www.youtube.com/watch?v=QsqatJxAUtk',
         },
    });
    
@@ -54,15 +54,22 @@ export default function RegisterVideo(){
 
                 <form onSubmit={(e) => { 
                     e.preventDefault();
-                    supabase.from('videos').insert({
+                    
+                    
+                    supabase.from('video').insert({
                         title: formCadastro.values.title,
                         url: formCadastro.values.url,
-                        thumb: "",
+                        thumb: getThumbnail(formCadastro.values.url),
                         playlist: "Jogos",
-                    })
+                    }).then((res) => {
+                        console.log(res);
+                        formCadastro.clearForm();
+                    }).catch((err) => {
+                        console.log(err);
+                    });
 
+                    
                     setFormVisible(!formVisible);
-                    formCadastro.clearForm();
                 }}>
                     <div>
                     <button type='button' className='close-modal' onClick={() => setFormVisible(!formVisible) }>
