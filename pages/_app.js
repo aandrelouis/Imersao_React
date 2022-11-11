@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components'
-import { CSSReset } from '../src/components/CSSReset.js'
+import { CSSReset } from '../src/components/CSSReset'
 import ColorModeProvider, { ColorModeContext } from '../src/components/Menu/components/ColorMode';
 import RegisterVideo from '../src/components/RegisterVideo';
 import '../styles/globals.css'
